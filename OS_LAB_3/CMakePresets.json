@@ -1,0 +1,55 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "description": "Default configuration for OS_LAB_3 project",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${workspaceFolder}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON"
+            }
+        },
+        {
+            "name": "OS_LAB_3",
+            "displayName": "Visual Studio 2022 - x64",
+            "description": "Using Visual Studio 17 2022 compiler (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "OS_LAB_3-Debug",
+            "displayName": "Visual Studio 2022 x64 - Debug",
+            "configurePreset": "OS_LAB_3",
+            "configuration": "Debug"
+        },
+        {
+            "name": "OS_LAB_3-Release",
+            "displayName": "Visual Studio 2022 x64 - Release",
+            "configurePreset": "OS_LAB_3",
+            "configuration": "Release"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "OS_LAB_3_tests",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "OS_LAB_3"
+        }
+    ]
+}
